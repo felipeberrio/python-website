@@ -4,7 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'hello world'
+    return 'Home Page'
+
+@app.route('/about')
+def about():
+    return 'About Page'
 
 if __name__ == '__main__':
     app.run()

@@ -31,3 +31,12 @@ https://flask.palletsprojects.com/en/2.2.x/
     app.run()
 
 9. Para ejecutar nuestro archivo vamos a escribir en consola: python index.py
+
+### Crear otras rutas
+
+10. Vamos a modificar del objeto app para crear una nueva ruta
+        @app.route('/about')
+        def about():
+            return 'About Page'
+
+11. 
