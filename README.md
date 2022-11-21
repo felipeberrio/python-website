@@ -73,4 +73,39 @@ https://flask.palletsprojects.com/en/2.2.x/
 
 ### Utilizando librerias de estilos/frameworks como bootstrap
 
-19.     
+19. Importamos según la documentación el archivo el link para html y vamos a crear el navbar del home
+
+### Motores de plantillas
+
+20. Para reutilizar código vamos a usar motores de plantillas para repetir por ejemplo el navbar en about, creamos un archivo llamado layout.html en templates
+
+21. PAra el layout copiamos toda la documentación del home.html y solo ponemos 
+
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+
+    Juesto en la sección que va a ser única para cada bloque ya que lo demás se va a repetir
+
+22. ya podemos borrar toda la estructura html del home y usar solo lo que vamos a mostrar: 
+<h1>Home Page</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur laborum modi nam ullam sequi nostrum aspernatur ipsum ipsam quam dolores impedit placeat, beatae sit adipisci incidunt sint id quasi officiis labore neque voluptatibus, atque pariatur. Vel, rerum adipisci dignissimos obcaecati sint et id temporibus totam ducimus. Architecto, quibusdam illo.</p>
+
+
+23. Para que utilice el otro codigo del motor de plantillas vamos a incluir este extend: 
+
+{% extends "layout.html" %}    
+
+{% block content %}
+<h1>Home Page</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor consequuntur laborum modi nam ullam sequi nostrum aspernatur ipsum ipsam quam dolores impedit placeat, beatae sit adipisci incidunt sint id quasi officiis labore neque voluptatibus, atque pariatur. Vel, rerum adipisci dignissimos obcaecati sint et id temporibus totam ducimus. Architecto, quibusdam illo.</p>
+{% endblock %}
+
+24. Cambiamos estilos con bootstrap agregando un jimbotron
+
+25. agregamos un fondo con el sitio web: iugradientes.com para que se puedan ver los tipos de fondo en gradiente con su código
+
+### Desplegar la app en Heroku
+
+26. 
