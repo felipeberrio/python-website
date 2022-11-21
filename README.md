@@ -67,4 +67,10 @@ https://flask.palletsprojects.com/en/2.2.x/
 
 17. Creamos una nueva carpeta llamada Static afuera del todo donde vamos a colocar nuestros archivos estaticos, es común el nombre pero no obligatorio
 
-18. Creamos la ruta static/css/main.css y agregamos estilo al fondo y unínmos en el archivo html
+18. Creamos la ruta static/css/main.css y agregamos estilo al fondo y unínmos en el archivo html, esto con la etiqueta link y unas llaves en href, para que sepa que vamos a ubicarlo con python una especie de función brindada por python para usar los estilos de la carpeta estatica
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+### Utilizando librerias de estilos/frameworks como bootstrap
+
+19.     
