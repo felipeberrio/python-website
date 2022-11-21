@@ -39,4 +39,18 @@ https://flask.palletsprojects.com/en/2.2.x/
         def about():
             return 'About Page'
 
-11. 
+11. Nosotros realmente no queremos retornar texto, queremos realmente retornar un archivo Html para maquetear páginas web por lo que vamos a crear una carpeta que almacene los HTML que vamos a crear (/templates) y crearemos el archivo home.html
+
+12. Para poder importar los templates que vamos creando, en index.py vamos importar otra libreria de FLask llamada render template: from flask import Flask, render_template
+
+13. Vamos a introducir nuestro template en la ruta creada a la app: 
+        @app.route('/')
+        def home():
+            return render_template('home.html')
+            }
+
+14. Creamos la estructura básica del home.html y un texto base para comprobar la conexión
+
+15. Para no tener la necesidad de cerrar el servidor y reiniciarlo siempre, podemos agregar una parte de código que va a hacer que la app se ejecute en modo de prueba por lo cual se encuentra cambiando archivos y cosas asi que se reiniciara cada vez que se cambie el código:
+        if __name__ == '__main__':
+        app.run(debug=True)
