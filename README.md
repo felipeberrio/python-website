@@ -51,6 +51,20 @@ https://flask.palletsprojects.com/en/2.2.x/
 
 14. Creamos la estructura básica del home.html y un texto base para comprobar la conexión
 
+### Debug mode one - Modo prueba on para que se reactualice el servidor al modificar
+
 15. Para no tener la necesidad de cerrar el servidor y reiniciarlo siempre, podemos agregar una parte de código que va a hacer que la app se ejecute en modo de prueba por lo cual se encuentra cambiando archivos y cosas asi que se reiniciara cada vez que se cambie el código:
         if __name__ == '__main__':
         app.run(debug=True)
+
+### Creamos demás rutas y templates del sitio web
+
+16. Creamos y vinculamos la ruta about
+
+>A veces el computador guarda memoria cache de los archivos, por lo qeu podemos usar Ctrl + Shift + R o modo incognito para inciiar sin cache y que si se actualice por completo
+
+### Creando estilos
+
+17. Creamos una nueva carpeta llamada Static afuera del todo donde vamos a colocar nuestros archivos estaticos, es común el nombre pero no obligatorio
+
+18. Creamos la ruta static/css/main.css y agregamos estilo al fondo y unínmos en el archivo html
