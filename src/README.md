@@ -113,6 +113,65 @@ https://flask.palletsprojects.com/en/2.2.x/
         {% endblock %}
     </div>
 
+### Crear entorno virtual
+
+26. Para preparar nuestro código y desarrollar un sitio web, es mejor tener un entorno virtual: el cual es un entorno que separa nuestro proyecto de cualquier otro proyecto de python desarollado antes. esto funciona con administradores de paquetes. Por lo cual vamos a guardar todo nuestro código en /src.
+
+27. Vamos a crear nuestro entorno virtual en: python virtual env; para instalarlo vamos a usar en el terminal el siguiento módulo: pip install virtualenv
+
+>Ya instalamos virtual env vamos a crear el entorno virtual
+28. Para comenzar a ejecutar el entorno virtual desde python un módulo vamos a usar en la terminal y con un nombre que sera venv: python -m venv venv
+
+> Se comienza a instalar venv en la carpeta venv con lo mas importante los scriptsdonde nosotros vamos a tener comando de python3 python pip y demas para ejecutar únicamente con este proyecto en su entorno virtual, desde la consola podemos usar estos scripts desde nuestro entorno
+> Si vamos a cd venv/scripts, podemos ejecutar: python y podemos ver que usamos la verción 3.10 de python en la maquina virtual - podemos cancelar con: exit()
+
+29. vamos a instalar flask desde nuestro entorno virtual desde la carpeta de scripts: C:\Users\pipe_\Documents\GitHub\python-website\venv\Scripts>pip install flask
+> Se va a instalar flask en nuestro entorno virtual, ya esta el modulo flask
+
+30. Ejecutamos python desde scripts pero subiendo el nivel: C:\Users\pipe_\Documents\GitHub\python-website\venv\Scripts>python ../../src/index.py
+>Ejecutaoms el index pero desde el python del script de nuestra maquina virtual
+
 ### Desplegar la app en Heroku
 
-26. 
+31. Heroku nos permite montar nuestra aplicación sin la necesidad de configurar un servidor y demás; vamos a Heroku.com y nos loggeamos
+
+32. Vamos a descargar Heroku CLI para poder ejecutar heroku desde nuestro terminal: https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
+
+33. Comprovamos nuestra instalación desde una nueva consola, con: heroku --version
+
+34. Lo primero es comenzar a loggearnos en Heroku: heroku login, el cual nos llevara con un boton al navegador a logearnos
+
+35. Configuramos lo que necesitamos la aplicacion ademas del entorno virtual: Heroku necesita 1) Archivo de necesidades de heroku de nuestra app: src/requirements.txt
+2) Crear archivo de ejecución donde indicamos el entorno de python de nuestra app, por defecto el tomara la versión python3.6 o creamos archivo con: src/runtime.txt
+3) Crear archivo: Procfile para decir que archivos tiene que ejecutar al iniciar
+
+>Nosotros no solamente ejecutaremos la biblioteca FLASK, sino que heroku tambien va a utilizar la biblioteca: Gunicorn que es un complemento que necesita Heroku para poder ejecutar nuestro servidor HTTP
+
+36. Instalamos biblioteca Gunicorn con: pip install gunicorn desde Scripts nuestro entorno virtual: C:\Users\pipe_\Documents\GitHub\python-website\venv\Scripts>pip install gunicorn
+
+37. En procfile especificamos
+
+Vamos a ejecutar una pagina web, con gunicorn, el archivo index con el nombre app de nuestra aplicacion web:
+web: gunicorn index:app
+
+38. Usamos python --version en scripts de nuestro entorno para ver la versión que tiene para ponerla en el archivo runtime.txt
+
+39. Usamos el modulo: pip freeze para ver todo lo que necesita nuestra aplicación y lo vamos a agregar a requirementes.txt con un comando: C:\Users\pipe_\Documents\GitHub\python-website\venv\Scripts>pip freeze > ../../src/requirements.txt
+
+Con esto ya podemos desplegar nuestra aplicación
+
+40. Creamos nuestra aplicación con heroku en la terminal con: heroku create // o con heroku create NOMBREDELPROYECTO
+
+Nombre aleatorio nuestro: vast-scrubland-58534
+
+41. Vamos a crear un repositorio remoto en heroku a partir de un repositorio remoto en Git - no necesita ser github: https://devcenter.heroku.com/articles/git
+
+Enlazamos heroku a Git
+heroku git:remote -a vast-scrubland-58534
+
+Subimos nuestra rama
+git push heroku main
+
+
+
+
