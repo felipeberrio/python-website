@@ -170,7 +170,11 @@ Enlazamos heroku a Git
 heroku git:remote -a vast-scrubland-58534
 
 Subimos nuestra rama
-git push heroku main
+git push heroku master
+
+Iniciar nuestra aplicación
+heroku open
+
 
 
 
